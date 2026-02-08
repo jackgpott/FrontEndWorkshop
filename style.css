@@ -1,107 +1,182 @@
   
- 
-  @font-face { 
-    font-family: SeafordBold; 
-    src: url(./font/SeafordBold.ttf); 
-    font-weight: normal; 
-    }    
-    
-  @font-face { 
-    font-family: SeafordRg; 
-    src: url(./font/SeafordRg.ttf); 
-    font-weight: normal; 
-    }
 
-    .container{
-      width: 1000px;
-      background-color: #fff;
-      margin: auto;
-
-    }
- h1 {
-    color: navy;
-    font-family: 'SeafordBold';
-    text-align: center;
-  }
-
-  h2 {
-    font-family: SeafordRg;
-    color: navy;
+  @font-face {
+  font-family: SeafordBold;
+  src: url(./font/SeafordBold.ttf);
+  font-weight: normal;
 }
 
-  p.myP{
-    color: brown;
-    text-align: justify;
-   text-justify: inter-word;
-  }
+@font-face {
+  font-family: SeafordRg;
+  src: url(./font/SeafordRg.ttf);
+  font-weight: normal;
+}
 
-  p{
-    font-family: SeafordRg;
-    color: black;
-  }
+/* Page base */
+body {
+  font-family: SeafordRg;
+  background-color: #f5f5f5; /* makes the white container pop */
+  margin: 0;
+  padding: 0;
+}
 
-  p.myP:hover{background-color: #ddd;}
+/* Main container */
+.container {
+  max-width: 1000px;
+  background-color: #fff;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+}
 
+/* Headings */
+h1 {
+  color: navy;
+  font-family: SeafordBold;
+  text-align: center;
+  margin-top: 0;
+}
 
- body {
-        font-family: SeafordRg;
-        background-color:white;
-      }
+h2 {
+  font-family: SeafordRg;
+  color: navy;
+  margin-bottom: 10px;
+}
 
+p {
+  font-family: SeafordRg;
+  color: black;
+  line-height: 1.5;
+}
 
+/* Main bio paragraph */
+p.myP {
+  color: brown;
+  text-align: justify;
+  text-justify: inter-word;
+}
 
-td {
-    text-align: center;
-  }
+p.myP:hover {
+  background-color: #ddd;
+}
 
+/* ---------- NEW: DIV STRUCTURE STYLES ---------- */
+.header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
 
+.links {
+  margin-top: 10px;
+}
 
+.links a {
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
+}
 
-  ol:hover{background-color: #ddd;}
+.links a:hover {
+  text-decoration: underline;
+}
 
-ul:hover{background-color: #ddd;}
+.divider {
+  margin: 0 10px;
+  color: #aaa;
+}
 
-ol { 
-    list-style: none; 
-    counter-reset: num; 
-} 
+.main {
+  padding: 20px 0;
+}
 
-ol li { 
-    counter-increment: num; 
-}  
-  ol li::before { 
-    content:counter(num) "."; 
-    color: blue;     
-} 
+.section {
+  margin: 25px 0;
+  padding: 15px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
 
+.footer {
+  border-top: 2px solid #eee;
+  padding-top: 20px;
+  margin-top: 20px;
+}
 
+/* Lists */
+ol:hover { background-color: #ddd; }
+ul:hover { background-color: #ddd; }
+
+/* Your custom numbered list formatting */
+ol {
+  list-style: none;
+  counter-reset: num;
+  padding-left: 0;
+}
+
+ol li {
+  counter-increment: num;
+  margin-bottom: 10px;
+}
+
+ol li::before {
+  content: counter(num) ". ";
+  color: blue;
+  font-weight: bold;
+}
+
+/* Table */
 #mytable {
-    font-family: SeafordRg;
-    border-collapse: collapse;
-    width: 30%;
-  }
-  
-  #mytable td, #mytable th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #mytable tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #mytable tr:hover {background-color: #ddd;}
-  
-  #mytable th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: grey;
-    color: white;
-  }
+  font-family: SeafordRg;
+  border-collapse: collapse;
+  width: 100%;            /* changed from 30% so it looks professional */
+  margin-top: 10px;
+}
 
-  label { display: inline-block; width: 100px; text-align: right; }
- 
- img.myImage{
+#mytable td, #mytable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#mytable tr:nth-child(even) { background-color: #f2f2f2; }
+#mytable tr:hover { background-color: #ddd; }
+
+#mytable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: grey;
+  color: white;
+}
+
+/* Form */
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+.feedback-form {
+  display: grid;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[name="feedback"] {
+  padding: 8px;
+}
+
+/* Image */
+img.myImage {
   height: 140px;
   width: 150px;
   border-radius: 50%;
- }
+  object-fit: cover;
+}
+
+/* Center td content (you had this) */
+td {
+  text-align: center;
+}
